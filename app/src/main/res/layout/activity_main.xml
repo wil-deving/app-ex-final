@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Se añadio al manifest para que se pueda hacer peticiones a Servicios servicios externos
+     android:usesCleartextTraffic="true" ; ademas tambien los permisos de internet.
+     -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AUTO TIENDA"
+        android:textSize="90dp"
+        android:gravity="center"
+        android:textColor="#1b262c"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App"
+        android:textSize="60dp"
+        android:gravity="center"
+        android:textColor="#1b262c"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnQuote"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Ver vehículos"
+        android:textAllCaps="false"
+        android:textSize="50dp"
+        android:textColor="#1b262c"
+        android:background="#21bf73" />
+
+</LinearLayout>
