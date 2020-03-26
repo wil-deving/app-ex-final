@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/tvTitleVehicle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorLetras"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="Titulo"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTitleVehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorLetras"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Titulo"/>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="30dp"
-        android:textColor="@color/colorLetras"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="Tipo de compra"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            android:textColor="@color/colorLetras"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Tipo de compra"/>
 
-    <RadioGroup
-        android:id="@+id/rgOpcionesCompra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
+        <RadioGroup
+            android:id="@+id/rgOpcionesCompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
 
             <RadioButton
                 android:id="@+id/rbCredito"
@@ -54,139 +58,154 @@
                 android:textSize="20dp"
                 android:text="Contado"/>
 
-    </RadioGroup>
+        </RadioGroup>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Precio ($US):"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/colorLetras" />
+
+            <TextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10000"
+                android:textSize="25dp"
+                android:textColor="@color/colorLetras" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvTagPagoIni"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pago inicial($US):"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/colorLetras" />
+
+            <EditText
+                android:id="@+id/etPagoIni"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:text="2000"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/tvspnTagAnios"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:text="plazo de pago (Años)"
+                android:textColor="@color/colorLetras"
+                android:gravity="center"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:id="@+id/spnAnios"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/aniosPlazo">
+            </Spinner>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCalcularQuote"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Cotizar"
+            android:textAllCaps="false"
+            android:textSize="25dp"
+            android:textColor="#1b262c"
+            android:background="#21bf73" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvTagMonthQuote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Cuota mensual (Bs):"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/colorLetras" />
+
+            <TextView
+                android:id="@+id/tvMonthQuote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:text="0"
+                android:textSize="25dp"
+                android:textColor="@color/colorLetras" />
+
+        </LinearLayout>
 
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/tvPlazo"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Precio ($US):"
+            android:text="A 3 Años plazo"
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="@color/colorLetras" />
 
-        <TextView
-            android:id="@+id/tvPrecio"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="10000"
-            android:textSize="25dp"
-            android:textColor="@color/colorLetras" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:weightSum="2">
-
-        <TextView
-            android:id="@+id/tvTagPagoIni"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Pago inicial($US):"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:textColor="@color/colorLetras" />
-
-        <EditText
-            android:id="@+id/etPagoIni"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="number"
-            android:text="2000"
-            android:textSize="25dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:weightSum="7">
-
-        <TextView
-            android:id="@+id/tvspnTagAnios"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text="plazo de pago (Años)"
-            android:textColor="@color/colorLetras"
-            android:gravity="center"
-            android:textSize="25dp" />
-
-        <Spinner
-            android:id="@+id/spnAnios"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:entries="@array/aniosPlazo">
-        </Spinner>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnCalcularQuote"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:text="Cotizar"
-        android:textAllCaps="false"
-        android:textSize="25dp"
-        android:textColor="#1b262c"
-        android:background="#21bf73" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:weightSum="3">
-
-        <TextView
-            android:id="@+id/tvTagMonthQuote"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Cuota mensual (Bs):"
-            android:gravity="center"
-            android:textSize="25dp"
-            android:textColor="@color/colorLetras" />
-
-        <TextView
-            android:id="@+id/tvMonthQuote"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="number"
-            android:text="0"
-            android:textSize="25dp"
-            android:textColor="@color/colorLetras" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvPlazo"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="A N Años plazo"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textColor="@color/colorLetras" />
-
-</LinearLayout>
+</ScrollView>

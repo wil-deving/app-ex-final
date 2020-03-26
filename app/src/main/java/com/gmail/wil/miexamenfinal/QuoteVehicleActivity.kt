@@ -1,5 +1,6 @@
 package com.gmail.wil.miexamenfinal
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import android.widget.Spinner
@@ -30,7 +31,8 @@ class QuoteVehicleActivity : AppCompatActivity() {
         tvPrecio.text = auto.precio_unitario
 
         btnCalcularQuote.setOnClickListener {
-            prepareDataForSend()
+            // Enviar quote WS asincronamente
+            AsyncTaskExample().execute()
         }
 
         rbCredito.setOnClickListener {
@@ -76,8 +78,8 @@ class QuoteVehicleActivity : AppCompatActivity() {
         tvTagMonthQuote.setVisibility(View.INVISIBLE)
         tvMonthQuote.setVisibility(View.INVISIBLE)
         tvPlazo.setVisibility(View.INVISIBLE)
-        // Enviar quote WS
-        prepareDataForSend()
+        // Enviar quote WS asincronamente
+        AsyncTaskExample().execute()
     }
 
     fun prepareDataForSend () {
@@ -94,6 +96,11 @@ class QuoteVehicleActivity : AppCompatActivity() {
         } else if (tipoQuote.equals("Credito")) {
             enviarDataQuote(idAuto, tipoQuote, capitalAmortizado, anios, cuotaMes)
         }
+    }
+
+    fun setAfterResp (couta: Double, anios:String) {
+        tvMonthQuote.text = couta.toString()
+        tvPlazo.text = "A ${anios.toInt()} Años plazo"
     }
 
     fun enviarDataQuote (idAuto:String, tipoQuote:String, capitalAmortizado:Double, anios:String,
@@ -120,9 +127,24 @@ class QuoteVehicleActivity : AppCompatActivity() {
             })
     }
 
-    fun setAfterResp (couta: Double, anios:String) {
-        tvMonthQuote.text = couta.toString()
-        tvPlazo.text = "A ${anios.toInt()} Años plazo"
+    inner class AsyncTaskExample : AsyncTask<String, String, String>() {
+        override fun onPreExecute() {
+            super.onPreExecute()
+            progressBar.visibility = View.VISIBLE
+        }
+
+        override fun doInBackground(vararg params: String?): String {
+            prepareDataForSend()
+            return "termino"
+        }
+
+        override fun onPostExecute(result: String?) {
+            super.onPostExecute(result)
+            /* Toast.makeText(applicationContext,
+                "paso la ultima de async",
+                Toast.LENGTH_SHORT).show() */
+            progressBar.visibility = View.INVISIBLE
+        }
     }
 
 }
