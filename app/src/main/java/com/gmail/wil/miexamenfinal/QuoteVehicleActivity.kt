@@ -111,6 +111,9 @@ class QuoteVehicleActivity : AppCompatActivity() {
                                         response: Response<SaveQuoteResponse>) {
                     val resp = response!!.body()
                     if (resp!!.correcto) {
+                        Toast.makeText(applicationContext,
+                            "Cotización enviada con exito",
+                            Toast.LENGTH_LONG).show()
                         setAfterResp(cuotaMes, anios)
                     } else {
                         Toast.makeText(applicationContext,

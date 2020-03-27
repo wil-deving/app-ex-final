@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textColor="@color/colorLetras"
-            android:textSize="50dp"
+            android:textSize="35dp"
             android:textStyle="bold"
             android:gravity="center"
             android:text="Titulo"/>
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:textColor="@color/colorLetras"
             android:textStyle="bold"
             android:gravity="center"
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:weightSum="2">
 
             <TextView
@@ -90,12 +90,12 @@
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="1dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="7dp"
             android:visibility="invisible" />
 
         <LinearLayout
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:text="Pago inicial($US):"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:textColor="@color/colorLetras" />
 
             <EditText
@@ -120,6 +120,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginRight="20dp"
                 android:inputType="number"
                 android:text="2000"
                 android:textSize="25dp" />
@@ -141,7 +142,7 @@
                 android:text="plazo de pago (Años)"
                 android:textColor="@color/colorLetras"
                 android:gravity="center"
-                android:textSize="25dp" />
+                android:textSize="18dp" />
 
             <Spinner
                 android:id="@+id/spnAnios"
@@ -180,7 +181,7 @@
                 android:layout_weight="2"
                 android:text="Cuota mensual (Bs):"
                 android:gravity="center"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:textColor="@color/colorLetras" />
 
             <TextView
@@ -188,9 +189,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="number"
                 android:text="0"
-                android:textSize="25dp"
+                android:textSize="18dp"
                 android:textColor="@color/colorLetras" />
 
         </LinearLayout>
@@ -203,7 +203,7 @@
             android:layout_height="wrap_content"
             android:text="A 3 Años plazo"
             android:gravity="center"
-            android:textSize="25dp"
+            android:textSize="18dp"
             android:textColor="@color/colorLetras" />
 
     </LinearLayout>

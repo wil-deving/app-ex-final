@@ -38,6 +38,7 @@ class VehiclesListActivity : AppCompatActivity() {
                     // Toast.makeText(applicationContext,"Peticion Correcta",Toast.LENGTH_SHORT).show()
                     val listaVehicles = resp!!.listaResultado
                     listaVehiclesAdapter!!.updateVehiclesList(listaVehicles)
+                    tvCantidadAutos.text = listaVehiclesAdapter!!.itemCount.toString() + " Registros"
                 } else {
                     Toast.makeText(applicationContext,"Peticion de servicio Errada", Toast.LENGTH_SHORT).show()
                 }
