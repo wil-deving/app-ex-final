@@ -5,20 +5,33 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ConfigServices {
 
+    private val PUBLICA = true
+
     private val protocol = "http"
     private val host = "192.168.0.105"
     private val port = "80"
     private val path = "ShopCar/MobileServices"
     private val pathImages = "ShopCar/Files/Images/"
     // private val path = "ShopCar/testServices"
+    // data para obtener datos del backend de la nube
+    private val protocolCloud = "https"
+    private val hostCloud = "examenfinalwil.000webhostapp.com"
+    private val pathCloud = "MobileServices"
+    private val pathImagesCloud = "Files/Images/"
 
     fun getUrlService () : String {
-        val URL = protocol + "://" + host + ":" + port + "/" + path + "/"
+        var URL = protocol + "://" + host + ":" + port + "/" + path + "/"
+        if (PUBLICA) {
+            URL = protocolCloud + "://" + hostCloud + "/" + pathCloud + "/"
+        }
         return URL
     }
 
     fun getUrlVehiclesImages () : String {
-        val URLImages = protocol + "://" + host + ":" + port + "/" + pathImages + "/"
+        var URLImages = protocol + "://" + host + ":" + port + "/" + pathImages + "/"
+        if (PUBLICA) {
+            URLImages = protocolCloud + "://" + hostCloud + "/" + pathImagesCloud + "/"
+        }
         return URLImages
     }
 
