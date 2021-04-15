@@ -12,10 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".QuoteVehicleActivity"></activity>
-        <activity android:name=".VehiclesListActivity" />
-        <activity android:name=".DogsActivity" />
-        <activity android:name=".ListActivity" />
+        <activity android:name=".OfferDetail"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

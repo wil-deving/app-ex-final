@@ -1,12 +1,5 @@
 <resources>
-    <string name="app_name">Mi Examen Final</string>
 
-    <string-array name="aniosPlazo">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-    </string-array>
+    <string name="app_name">Demo Progra 3</string>
 
 </resources>

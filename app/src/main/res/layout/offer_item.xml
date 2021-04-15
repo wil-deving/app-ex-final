@@ -4,7 +4,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/cardPokemonItem"
+    android:id="@+id/offerItem"
     android:layout_margin="5dp"
     card_view:cardBackgroundColor="@color/colorBlanco"
     card_view:cardCornerRadius="5dp"
@@ -18,14 +18,6 @@
         android:layout_height="wrap_content"
         android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/ivImgItemVeh"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"
-            android:layout_gravity="center"
-            android:layout_weight="2"/>
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -34,7 +26,7 @@
             android:layout_marginLeft="10dp">
 
             <TextView
-                android:id="@+id/tvTitleItemVe"
+                android:id="@+id/tvTitleItem"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -46,7 +38,7 @@
                 android:layout_marginRight="10dp"/>
 
             <TextView
-                android:id="@+id/tvAnioItemVe"
+                android:id="@+id/tvFirstText"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -57,7 +49,7 @@
                 android:layout_marginRight="10dp"/>
 
             <TextView
-                android:id="@+id/tvCapacityItemVe"
+                android:id="@+id/tvSecondText"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTitleOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorLetras"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Titulo"/>
+
+        <TextView
+            android:id="@+id/tvCityOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="25dp"
+            android:textColor="@color/colorLetras"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Ciudad"/>
+
+        <TextView
+            android:id="@+id/tvAddressOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorLetras"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="Ciudad"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="12">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Superficie(mts2):"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+
+            <TextView
+                android:id="@+id/tvSurface"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="00000"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="12">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Sup. Construida(mts2):"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+
+            <TextView
+                android:id="@+id/tvBuildedSurface"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="00000"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:weightSum="12">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="Precio($UD):"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="00000"
+                android:textSize="20dp"
+                android:textColor="@color/colorLetras" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnViewFields"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Más Información"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:textColor="#1b262c"
+            android:background="#1121BF73" />
+
+        <LinearLayout
+            android:id="@+id/llFields"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/etInterestedName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="text"
+                android:hint="Ingrese su nombre..."
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/etInterestedPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="number"
+                android:hint="Número de Celular..."
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/etInterestedEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="textEmailAddress"
+                android:hint="Correo electrónico..."
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pulse enviar para que un agente se contacte con usted"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="12dp"
+                android:textColor="@color/colorLetras" />
+
+            <Button
+                android:id="@+id/btnGetInquiri"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Enviar"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#FAFAFA"
+                android:background="#2196F3" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
