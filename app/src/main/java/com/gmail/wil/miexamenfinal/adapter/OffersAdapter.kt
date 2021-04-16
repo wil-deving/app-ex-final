@@ -31,6 +31,7 @@ class OffersAdapter(private val context: Context) : RecyclerView.Adapter<OffersA
     override fun getItemCount () = dataSetAdp.size
 
     fun updateOffersList (offers: ArrayList<Offer>) {
+        dataSetAdp.clear()
         dataSetAdp.addAll(offers)
         notifyDataSetChanged()
     }

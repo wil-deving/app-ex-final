@@ -8,6 +8,7 @@ import android.net.DnsResolver
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.gmail.wil.miexamenfinal.adapter.OffersAdapter
 import com.gmail.wil.miexamenfinal.configApp.ConfigServices
 import com.gmail.wil.miexamenfinal.model.dto.OffersResponseDto
@@ -20,6 +21,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var swipeRefreshLayout: SwipeRefreshLayout
+
     val retrofitClient = ConfigServices().getRetrofitClient()
     val offersService = retrofitClient.create<OfferApiInterface>(OfferApiInterface::class.java)
     var offerListAdapter: OffersAdapter? = null
@@ -27,11 +30,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshProductList)
+
         offerListAdapter = OffersAdapter(this)
         rvOffers.adapter = offerListAdapter
         rvOffers.layoutManager = LinearLayoutManager(this)
         rvOffers.setHasFixedSize(true)
         getOffersData()
+
+        swipeRefreshLayout.setOnRefreshListener {
+            getOffersData()
+            swipeRefreshLayout.isRefreshing = false
+        }
     }
 
     fun getOffersData() {
@@ -49,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext,
                         "Error al realizar el servicio",
                         Toast.LENGTH_SHORT).show()
+                    swipeRefreshLayout.isRefreshing = false
                 }
             }
 
@@ -56,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,
                     "Error al realizar el servicio",
                     Toast.LENGTH_SHORT).show()
+                swipeRefreshLayout.isRefreshing = false
             }
         })
     }
